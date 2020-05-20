@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.item {
+  display: inline-block;
+  vertical-align: top;
+  padding: 5%;
+}
+
+.item-a {
+  background-color: yellow;
+}
+
+.item-b {
+  background-color: yellowgreen;
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    font-size: 0;
+  }
+  .item {
+    display: inline-block;
+    padding: 5%;
+    font-size: 1rem;
+    vertical-align: top;
+  }
+
+  .item-a {
+    width: 30%;
+  }
+
+  .item-b {
+    width: 50%;
+  }
+}
