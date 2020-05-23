@@ -12,5 +12,8 @@
 - timing-function도 직접 커스텀 가능!
 
 3. animation1
+
+- transition과 animation의 차이는? keyframe의 존재유무! keyframe이 있어서 animation이 transition보다 다양한 효과를 줄 수 있다.
+
 4. animation2
 5. animation3
