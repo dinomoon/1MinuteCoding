@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .world {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40vw;
+        height: 40vw;
+        background-color: #fff000;
+        margin: 20px;
+      }
+      .card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 200px;
+        background-color: lightcoral;
+        font-size: 1.5rem;
+        border-radius: 0.5em;
+        margin: 1em;
+        transform: perspective(500px) rotateY(45deg);
+      }
+      .world2 .card {
+        transform: rotateY(45deg);
+      }
+      body {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>perspective(O)</h2>
+    <div class="world">
+      <div class="card">card</div>
+      <div class="card">card</div>
+      <div class="card">card</div>
+    </div>
+    <h2>perspective(X)</h2>
+    <div class="world world2">
+      <div class="card">card</div>
+      <div class="card">card</div>
+      <div class="card">card</div>
+    </div>
+  </body>
+</html>
