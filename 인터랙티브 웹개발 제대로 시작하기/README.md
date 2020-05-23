@@ -16,4 +16,8 @@
 - transition과 animation의 차이는? keyframe의 존재유무! keyframe이 있어서 animation이 transition보다 다양한 효과를 줄 수 있다.
 
 4. animation2
+
+- 좀 더 다양한 animation 속성들에 대해 알아봄! ()
+- 역시 개발자 도구에서 어떠한 속성이 있는지 나옴(물론 에디터에서도 알려줌)
+
 5. animation3
