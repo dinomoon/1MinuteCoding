@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes spaceship-ani {
+        to {
+          background-position: -2550px 0;
+        }
+      }
+      .spaceship2 {
+        width: 150px;
+        height: 150px;
+        background: url("../images/sprite_spaceship.png") no-repeat 0 0 / auto
+          150px;
+        animation: spaceship-ani 2s infinite;
+        margin-bottom: 100px;
+      }
+      .spaceship {
+        width: 150px;
+        height: 150px;
+        background: url("../images/sprite_spaceship.png") no-repeat 0 0 / cover;
+        animation: spaceship-ani 2s infinite steps(17);
+      }
+      body {
+        text-align: center;
+      }
+      div {
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>steps 없을 때</h2>
+    <div class="spaceship2"></div>
+    <h2>steps 있을 때</h2>
+    <div class="spaceship"></div>
+  </body>
+</html>
