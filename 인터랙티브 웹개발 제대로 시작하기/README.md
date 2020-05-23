@@ -34,3 +34,17 @@
 
 - 오브젝트를 감싸고 있는 화면에 변화를 줘야 3D처럼 보인다.
 - perspective를 주면 3D처럼 보인다.
+- 부모에 perspective를 줬을 때랑 card에 perspective를 줬을 때 보이는 것이 다르다.
+- rem과 em (font-size에 따라서 padding이나 margin 등등이 변화하게 하고 싶다면 padding, margin에 em을 주면 된다. em은 해당 엘리먼트 폰트사이즈의 배수! rem은 기본 폰트사이즈의 배수!)
+
+2. CSS 3D 2
+
+- 카드 뒤집기
+- perspective 속성은 3D 효과가 발생해야할 엘리먼트들을 담는 컨테이너에, transform: perspective() 는 3D 효과를 줄 엘리먼트 자체에 넣는다고 보시면 됩니다.
+- transform-style: preserve-3d;
+- backface-visibility: hidden;
+
+3. CSS 3D 3
+
+- 파이어폭스와 IE에서 CSS 3D 사용하는 방법?
+- 나중에 필요하면 다시 보자...
