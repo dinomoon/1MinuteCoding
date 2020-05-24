@@ -139,3 +139,22 @@ console.log(c);
   })();
 </script>
 ```
+
+**2. this와 이벤트 객체**
+
+- this, e.currentTarget과 e.target의 차이?
+  - this와 e.currentTarget은 이벤트를 추가한 객체를 가리키고 e.target은 이벤트가 발생한 객체를 가리킨다.
+
+```javacript
+(function)(){
+  const characters = document.querySelector('.characters');
+
+  function clickHandler(e) {
+    console.log(this);
+    console.log(e.currentTarget);
+    console.log(e.target);
+  }
+
+  characters.addEventListener('click', clickHandler);
+}();
+```

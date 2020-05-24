@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .characters {
+        display: flex;
+        justify-content: space-around;
+        background-color: #fff000;
+      }
+      .ilbuni {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="characters">
+      <div class="ilbuni a">
+        <img src="../images/ilbuni_0.png" alt="" />
+      </div>
+      <div class="ilbuni b">
+        <img src="../images/ilbuni_1.png" alt="" />
+      </div>
+      <div class="ilbuni c">
+        <img src="../images/ilbuni_2.png" alt="" />
+      </div>
+      <div class="ilbuni d">
+        <img src="../images/ilbuni_3.png" alt="" />
+      </div>
+    </div>
+    <script>
+      (function () {
+        const characters = document.querySelector(".characters");
+
+        const clickHandler = function () {
+          console.log(this);
+          // console.log(e);
+          // console.log(e.currentTarget);
+          // console.log(e.target);
+        };
+
+        characters.addEventListener("click", clickHandler);
+      })();
+    </script>
+  </body>
+</html>
