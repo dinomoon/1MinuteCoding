@@ -158,3 +158,43 @@ console.log(c);
   characters.addEventListener('click', clickHandler);
 }();
 ```
+
+**3. 움직이는 캐릭터 예제로 클릭 이벤트 익혀보기**
+
+- 움직이는 일분이를 클릭하면 일분이가 사라지는 예제
+- transform, animation으로 css작성 후 아래와 같이 자바스크립트 작성
+
+```javascript
+(function () {
+  const ilbuni = document.querySelectorAll(".ilbuni");
+
+  const clickHandler = function (e) {
+    this.parentNode.removeChild(this);
+  };
+
+  for (let i = 0; i < ilbuni.length; i++) {
+    ilbuni[i].addEventListener("click", clickHandler);
+  }
+})();
+```
+
+**4. 이벤트 위임**
+
+- 그런데, 위의 예제처럼 이벤트가 발생해야하는 엘리먼트에 모두 이벤트를 부여한다면 엘리먼트가 많아졌을 때, 굉장히 메모리를 많이 차지한다고 한다.
+- 따라서 아래와 같이 부모에 이벤트를 부여하는 것이 좋은데, 이것을 이벤트 위임이라고 한다.
+
+```javascript
+(function () {
+  const container = document.querySelectorAll(".container");
+
+  const clickHandler = function (e) {
+    if (e.target.classList.contains("ilbuni")) {
+      container.removeChild(e.target);
+    }
+  };
+
+  for (let i = 0; i < ilbuni.length; i++) {
+    container.addEventListener("click", clickHandler);
+  }
+})();
+```
