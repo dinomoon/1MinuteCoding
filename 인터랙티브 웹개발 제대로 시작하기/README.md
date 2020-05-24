@@ -95,4 +95,27 @@ console.log(b);
 console.log(c);
 ```
 
-- 단, 방(유효범위) 밖에서는 방 안에서 선언한 변수에 접근할 수 없지만 안에서는 밖에서 선언한 변수에 접근할 수 있다.
+- 단, 위처럼 방(유효범위) 밖에서는 방 안에서 선언한 변수에 접근할 수 없지만 안에서는 밖에서 선언한 변수에 접근할 수 있다.
+
+**DOM 스크립트1, 2, 3**
+
+- 원하는 엘리먼트를 가져오고 싶다.
+  - `document.querySelector()` 또는 `document.querySelectorAll()`
+- 엘리먼트에 속성을 넣거나 가져오고 싶다.
+  - const temp = document.querySelector('.characters');
+  - temp.setAttribute('data-id', 123);
+  - temp.getAttribute('data-id');
+  - data-는 표준 커스텀 속성이다. data-index, data-id 등 data-의 형식으로 시작하면 어떤 속성이든 필요에 따라 임의로 추가할 수 있다.
+- 직접 엘리먼트를 만들고 넣기
+  - const pElem = document.createElement('p');
+  - pElem.innerText = `<a href="#">일분이</a>`
+  - const characters = document.querySelector('.characters');
+  - characters.appendChild(pElem);
+- 엘리먼트 삭제하기
+
+  - characters.removeChild(document.querySelector('.b'));
+
+- 클래스 추가, 삭제, 토글
+  - characters.classList.add('클래스이름');
+  - characters.classList.remove('클래스이름');
+  - characters.classList.toggle('클래스이름');
