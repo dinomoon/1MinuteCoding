@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container {
+        position: relative;
+        width: 100vw;
+        height: 75vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        background-color: #fff000;
+      }
+      .ilbuni {
+        position: absolute;
+        cursor: pointer;
+        animation: ilbuni-ani infinite alternate;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+      }
+      .ilbuni:nth-of-type(1) {
+        left: 5%;
+        animation-duration: 1s;
+        background-image: url("../images/ilbuni_0.png");
+      }
+      .ilbuni:nth-of-type(2) {
+        left: 8%;
+        animation-duration: 1.5s;
+        background-image: url("../images/ilbuni_1.png");
+      }
+      .ilbuni:nth-of-type(3) {
+        left: 7%;
+        animation-duration: 2s;
+        background-image: url("../images/ilbuni_2.png");
+      }
+      .ilbuni:nth-of-type(4) {
+        left: 6%;
+        animation-duration: 2.5s;
+        background-image: url("../images/ilbuni_3.png");
+      }
+      @keyframes ilbuni-ani {
+        to {
+          transform: translateX(80vw);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="ilbuni a"></div>
+      <div class="ilbuni b"></div>
+      <div class="ilbuni c"></div>
+      <div class="ilbuni d"></div>
+    </div>
+    <script>
+      (function () {
+        const ilbuni = document.querySelectorAll(".ilbuni");
+
+        const clickHandler = function (e) {
+          this.parentNode.removeChild(this);
+        };
+
+        for (let i = 0; i < ilbuni.length; i++) {
+          ilbuni[i].addEventListener("click", clickHandler);
+        }
+      })();
+    </script>
+  </body>
+</html>
