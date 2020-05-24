@@ -62,3 +62,37 @@
 - flex-grow, flex-shirink, flex-basis는 자식들이 어떤 비율로 보일지
 - flex-grow는 비율인데 flex-basis의 기본값인 auto는 자식들의 공백을 기준으로 비율을 계산한다.
 - flex: 1; 을 사용하면 flex-grow:1; flex-shirink:1; flex-basis: 0;이 들어간다. 그래서 자식들의 너비 그 자체를 기준으로 비율을 계산해서 편하다.
+
+---
+
+### 인터랙티브 웹 개발을 위한 자바스크립트 시작하기
+
+**자바스크립트 워밍업**
+
+- var, let, const의 차이는?
+
+  - var vs let,const -> 유효범위의 차이! (var은 함수, let과 const는 블럭단위(중괄호))
+
+```javascript
+function temp() {
+  var a = 100;
+  let b = 100;
+  const c = 100;
+}
+//모두 에러
+console.log(a);
+console.log(b);
+console.log(c);
+
+if (true) {
+  var a = 100;
+  let b = 100;
+  const c = 100;
+}
+//let과 const만 에러
+console.log(a);
+console.log(b);
+console.log(c);
+```
+
+- 단, 방(유효범위) 밖에서는 방 안에서 선언한 변수에 접근할 수 없지만 안에서는 밖에서 선언한 변수에 접근할 수 있다.
