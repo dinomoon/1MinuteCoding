@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        height: 80vh;
+        background-color: gray;
+      }
+      .box {
+        /* flex-grow: 1; */
+        flex-basis: 0;
+        padding: 2em;
+        border: 2px solid #000;
+        background-color: #fff;
+      }
+      .box:nth-child(1) {
+        flex-grow: 1;
+      }
+      .box:nth-child(2) {
+        flex-grow: 1;
+      }
+      .box:nth-child(3) {
+        flex-grow: 1;
+      }
+      .box:nth-child(4) {
+        flex-grow: 1;
+      }
+      .box:nth-child(5) {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">AAAAAAAAAAAAAAAAAAAAAAAAAAA</div>
+      <div class="box">BBBB</div>
+      <div class="box">C</div>
+      <div class="box">DDDDD</div>
+      <div class="box">EEE</div>
+    </div>
+  </body>
+</html>

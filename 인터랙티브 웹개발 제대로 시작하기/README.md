@@ -14,7 +14,7 @@
 
 **3. animation1**
 
-- transition과 animation의 차이는? keyframe의 존재유무! keyframe이 있어서 animation이 transition보다 다양한 효과를 줄 수 있다.
+- `transition`과 `animation`의 차이는? keyframe의 존재유무! keyframe이 있어서 animation이 transition보다 다양한 효과를 줄 수 있다.
 
 **4. animation2**
 
@@ -25,6 +25,8 @@
 
 - frame by frame 애니메이션을 css 애니메이션으로 구현하기!
 - 음.. 왜 150px로 하는지랑 background에 대해서 완전히 이해가 안됐다.
+
+---
 
 ### CSS 3D
 
@@ -39,10 +41,24 @@
 
 - 카드 뒤집기
 - perspective 속성은 3D 효과가 발생해야할 엘리먼트들을 담는 컨테이너에, transform: perspective() 는 3D 효과를 줄 엘리먼트 자체에 넣는다고 보시면 됩니다.
-- transform-style: preserve-3d;
-- backface-visibility: hidden;
+- `transform-style: preserve-3d`;
+- `backface-visibility: hidden`;
 
 **3. CSS 3D 3**
 
-- 파이어폭스와 IE에서 CSS 3D 사용하는 방법?
+- 파이어폭스와 IE에서 CSS 3D 사용하는 방법s?
 - 나중에 필요하면 다시 보자...
+
+---
+
+### CSS Flex
+
+**flex**
+
+- 부모에게 display: flex;
+- `flex-direction`의 기본값은 row (꼬치축)
+- `justify-content`는 꼬치축 정렬 (flex-start, flex-end, space-between, space-around, space-evenly)
+- `align-items`는 꼬치축의 수직축 정렬
+- flex-grow, flex-shirink, flex-basis는 자식들이 어떤 비율로 보일지
+- flex-grow는 비율인데 flex-basis의 기본값인 auto는 자식들의 공백을 기준으로 비율을 계산한다.
+- flex: 1; 을 사용하면 flex-grow:1; flex-shirink:1; flex-basis: 0;이 들어간다. 그래서 자식들의 너비 그 자체를 기준으로 비율을 계산해서 편하다.
