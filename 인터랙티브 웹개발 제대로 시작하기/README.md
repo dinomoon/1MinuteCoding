@@ -180,8 +180,9 @@ console.log(c);
 
 **4. 이벤트 위임**
 
-- 그런데, 위의 예제처럼 이벤트가 발생해야하는 엘리먼트에 모두 이벤트를 부여한다면 엘리먼트가 많아졌을 때, 굉장히 메모리를 많이 차지한다고 한다.
+- 그런데, 위의 예제처럼 이벤트가 발생해야하는 엘리먼트에 모두 이벤트를 부여한다면 엘리먼트가 많아졌을 때, 굉장히 메모리를 많이 차지한다고 한다.(페이지 성능에 좋지 않음)
 - 따라서 아래와 같이 부모에 이벤트를 부여하는 것이 좋은데, 이것을 이벤트 위임이라고 한다.
+- 또 하나의 장점은, 동적으로 이벤트가 발생되야할 엘리먼트들이 생성되어야한다고 할 때 부모가 이미 이벤트를 가지고 있다면, 생성되는 엘리먼트마다 이벤트를 붙이지 않아도 된다.
 
 ```javascript
 (function () {
@@ -196,5 +197,35 @@ console.log(c);
   for (let i = 0; i < ilbuni.length; i++) {
     container.addEventListener("click", clickHandler);
   }
+})();
+```
+
+**5. 이벤트 위임 보강 영상**
+
+- 만약, 버튼을 만들고 버튼에 이벤트를 달아야하는데 버튼 안에 텍스트나 이미지가 있어서, 클릭했을 때 이벤트가 텍스트나 이미지에 발생한다면 어떻게 해결해야할까?
+  1. css에서 해결: pointer-events: none;
+  2. javascript에서 해결<br>
+     => 상황에 따라 방법이 달라진다. (예를 들어 자식 엘리먼트 중에 이벤트가 또 있다면 css를 사용해서는 안된다.)
+
+```javascript
+(function () {
+  const menu = document.querySelector(".menu");
+
+  function clickHandler(e) {
+    let elem = e.target;
+    while (!elem.classList.contains("menu-btn")) {
+      elem = elem.parentNode;
+
+      if ((elem.nodeName = "BODY")) {
+        elem = null;
+        return;
+      }
+
+      // data-를 가져오는 방법 2가지
+      console.log(e.target.getAttribute("data-value"));
+      console.log(e.target.dataset.value);
+    }
+  }
+  menu.addEventListener("click", clickHandler);
 })();
 ```
