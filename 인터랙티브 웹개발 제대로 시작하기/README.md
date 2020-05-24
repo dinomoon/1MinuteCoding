@@ -119,3 +119,23 @@ console.log(c);
   - characters.classList.add('클래스이름');
   - characters.classList.remove('클래스이름');
   - characters.classList.toggle('클래스이름');
+
+---
+
+### 자바스크립트 이벤트 다루기
+
+**1. 이벤트의 기본동작**
+
+- 클릭 이벤트 추가하는 방법
+  - ilbuni.addEventListener('click', function(){ilbuni.classList.toggle('special')})
+- html 파일의 헤더에서 script를 작성할 때는 window.addEventListener('load', function(){}) 또는 window.addEventListener('DOMContentLoaded', function(){}) 안에 내용을 넣어줘야한다. (DOM을 사용할 수 있도록)
+- 전역 변수를 많이 사용하면 안된다.(협업할 때 변수명이 겹칠 수도 있으므로)
+  - body가 끝나기 직전에 script파일을 작성하는 경우 아래와 같이 작성해준다.
+
+```javascript
+<script>
+  (function(){
+    const characters = document.querySelector('.characters');
+  })();
+</script>
+```
