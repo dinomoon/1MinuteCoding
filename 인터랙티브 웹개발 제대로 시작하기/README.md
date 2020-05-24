@@ -186,9 +186,10 @@ console.log(c);
 
 ```javascript
 (function () {
-  const container = document.querySelectorAll(".container");
+  const container = document.querySelector(".container");
 
   const clickHandler = function (e) {
+    // container 영역을 클릭했을 때 에러가 발생하지 않게 하기 위해
     if (e.target.classList.contains("ilbuni")) {
       container.removeChild(e.target);
     }
@@ -202,10 +203,10 @@ console.log(c);
 
 **5. 이벤트 위임 보강 영상**
 
-- 만약, 버튼을 만들고 버튼에 이벤트를 달아야하는데 버튼 안에 텍스트나 이미지가 있어서, 클릭했을 때 이벤트가 텍스트나 이미지에 발생한다면 어떻게 해결해야할까?
-  1. css에서 해결: pointer-events: none;
+- 만약, 버튼을 클릭했을 때 이벤트가 발생해야하는데, 버튼 안에 텍스트나 이미지가 있어서, 클릭했을 때 이벤트가 제대로 발생하지 않는다면 어떻게 해야할까?
+  1. css에서 해결: `pointer-events: none;`
   2. javascript에서 해결<br>
-     => 상황에 따라 방법이 달라진다. (예를 들어 자식 엘리먼트 중에 이벤트가 또 있다면 css를 사용해서는 안된다.)
+     => 상황에 따라 방법이 달라진다. (예를 들어 자식 엘리먼트 중에 이벤트가 또 있다면 css를 사용해서는 안된다. 자식들의 이벤트까지 막혀버리므로..)
 
 ```javascript
 (function () {
