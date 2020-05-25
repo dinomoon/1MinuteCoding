@@ -297,7 +297,7 @@ const person = {
   person.name = '일분이';
   person.age = 10;
   person.introduce = function() {
-    console.log("안녕하세요 저는 " + this.name + " 이고 나이는 " + this.name + "살이에요");
+    console.log("안녕하세요 저는 " + this.name + " 이고 나이는 " + this.age + "살이에요");
   }
 }
 
@@ -305,7 +305,26 @@ const person2 = {
   person.name = '이분이';
   person.age = 8;
    person.introduce = function() {
-    console.log("안녕하세요 저는 " + this.name + " 이고 나이는 " + this.name + "살이에요");
+    console.log("안녕하세요 저는 " + this.name + " 이고 나이는 " + this.age + "살이에요");
   }
 }
+```
+
+**3. 객체3**
+
+```javascript
+//생성자 (constructor)
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.introduce = function () {
+    console.log(
+      "안녕하세요 저는 " + this.name + " 이고 나이는 " + this.age + "살이에요"
+    );
+  };
+}
+
+//인스턴스 (instance)
+const person1 = new Person("일분이", 10);
+const person2 = new Person("이분이", 8);
 ```
