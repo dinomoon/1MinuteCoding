@@ -312,6 +312,8 @@ const person2 = {
 
 **3. 객체3**
 
+- 생성자 만드는 방법
+
 ```javascript
 //생성자 (constructor)
 function Person(name, age) {
@@ -327,4 +329,50 @@ function Person(name, age) {
 //인스턴스 (instance)
 const person1 = new Person("일분이", 10);
 const person2 = new Person("이분이", 8);
+```
+
+**4. 객체4**
+
+- prototype이란? 위에서 보면 introduce함수는 중복된다. 따라서 프로토타입이라는 객체에 넣어주면 메모리를 절약할 수 있다.
+
+```javascript
+//생성자 (constructor)
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.introduce = function () {
+  console.log(
+    "안녕하세요 저는 " + this.name + " 이고 나이는 " + this.age + "살이에요"
+  );
+};
+
+//인스턴스 (instance)
+const person1 = new Person("일분이", 10);
+const person2 = new Person("이분이", 8);
+```
+
+- 또 다르 예시
+
+```js
+function Card(num, color) {
+  this.num = num;
+  this.color = color;
+  this.init();
+}
+
+Card.prototype = {
+  constructor: Card,
+  init: function () {
+    const mainElem = document.createElement("div");
+    mainElem.style.color = this.color;
+    mainElem.innerHTML = this.num;
+    mainElem.classList.add("card");
+    document.body.appendChild(mainElem);
+  },
+};
+
+const card1 = new Card(1, "green");
+const card2 = new Card(7, "blue");
 ```
