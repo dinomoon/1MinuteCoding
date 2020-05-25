@@ -99,22 +99,32 @@
       </div>
     </div>
     <script>
-      (function () {
+      requestAnimationFrame(function () {
         const stageElem = document.querySelector(".stage");
         let currentItem;
 
+        function active(elem) {
+          elem.classList.add("door-opened");
+          currentItem = elem;
+        }
+
+        function inactive(elem) {
+          elem.classList.remove("door-opened");
+        }
+
         function doorHandler(e) {
-          const targetElem = e.target;
+          const targetElem = e.target.parentNode;
 
           if (currentItem) {
-            currentItem.classList.remove("door-opened");
+            inactive(currentItem);
           }
 
-          if (targetElem.classList.contains("door-body")) {
-            targetElem.parentNode.classList.add("door-opened");
-            currentItem = targetElem.parentNode;
+          if (targetElem.classList.contains("door")) {
+            active(targetElem);
           }
         }
+
+        active(document.querySelector(".door:nth-child(2)"));
 
         stageElem.addEventListener("click", doorHandler);
       })();
