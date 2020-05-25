@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .ball {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: red;
+        transition: 1s;
+        margin: -15px 0 0 -15px;
+      }
+      .ball.end {
+        background-color: dodgerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ball"></div>
+    <script>
+      (function () {
+        const ballElem = document.querySelector(".ball");
+
+        window.addEventListener("click", function (e) {
+          // ballElem.style.transform =
+          //   "translate(" + e.clientX + "px" + "," + e.clientY + "px)";
+          ballElem.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        ballElem.addEventListener("transitionend", (e) => {
+          ballElem.classList.add("end");
+          console.log(e.elapsedTime);
+          console.log(e.propertyName);
+        });
+      })();
+    </script>
+  </body>
+</html>

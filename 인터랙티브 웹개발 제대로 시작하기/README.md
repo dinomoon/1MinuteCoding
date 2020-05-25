@@ -394,3 +394,18 @@ const card2 = new Card(7, "blue");
   - 스크롤 위치를 기준으로 객체의 위치를 알려준다.
 - `'innerHeight`
   - 브라우저의 높이를 알려준다.
+
+---
+
+### 9. Transition/Animation 이벤트
+
+**1.Transition 이벤트**
+
+- transitionstart
+- transitionend
+
+**2.Animation 이벤트**
+
+- animationstart
+- animationend
+- animationiteration
