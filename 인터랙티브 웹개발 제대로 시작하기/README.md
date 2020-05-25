@@ -392,7 +392,7 @@ const card2 = new Card(7, "blue");
   - 객체의 Top위치를 알려준다. (스크롤 위치가 변해도 같음)
 - `getBoundingClientRect`
   - 스크롤 위치를 기준으로 객체의 위치를 알려준다.
-- `'innerHeight`
+- `innerHeight`
   - 브라우저의 높이를 알려준다.
 
 ---
@@ -401,11 +401,54 @@ const card2 = new Card(7, "blue");
 
 **1.Transition 이벤트**
 
-- transitionstart
-- transitionend
+- `transitionstart`
+- `transitionend`
 
 **2.Animation 이벤트**
 
-- animationstart
-- animationend
-- animationiteration
+- `animationstart`
+- `animationend`
+- `animationiteration`
+
+---
+
+### 10. 타이밍 제어하기
+
+**1.setTimeout**
+
+- 첫번째 매개변수: 원하는 시간 후에 실행될 함수, 두번째 매개변수: 원하는 시간
+- clearTimeout(): 말 그대로 setTimeout을 클리어함(setTimeout이 실행되지 않음), setTimeout은 1을 리턴하는 데 이 값을 clearTimeout의 매개변수로 넣어주면 된다.
+
+**2. setInterval**
+
+- 두번째 매개변수로 넣은 시간마다 첫번째 매개변수에 있는 함수를 실행시킨다.
+- clearTimeout과 마찬가지로 clearInterval을 사용하면 setInterval을 종료시킬 수 있다.
+
+**3. requestAnimationFrame**
+
+- setInterval의 단점들을 보완한 함수. 이것을 쓰는 것이 더 좋다고 한다.
+- setInterval과 달리 실행함수 안에 넣어줘야한다. (재귀함수 같은..?)
+- 1초에 60번을 실행하는 것을 목표로 한다고 한다. (컴퓨터 상황에 따라 달라지기 때문이라고 함.)
+- cancelAnimationFrame을 사용해 종료시킬 수 있다.
+
+```js
+let timeId;
+let n = 0;
+const btn = document.querySelector(".btn");
+
+function sample() {
+  n++;
+  // 1초에 한 번씩 실행시키기
+  if (n % 60 == 0) {
+    console.log("action!");
+  }
+
+  timeId = requestAnimationFrame(sample);
+}
+
+sample();
+
+btn.addEventListener("click", () => {
+  cancelAnimationFrame(timeId);
+});
+```
