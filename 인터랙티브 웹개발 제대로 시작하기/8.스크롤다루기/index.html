@@ -53,10 +53,28 @@
     <script>
       (function () {
         const outputElem = document.querySelector(".output");
+        const ilbuniElem = document.querySelector(".ilbuni");
+
+        function showValue() {
+          let posY = ilbuniElem.getBoundingClientRect().top;
+          if (posY < window.innerHeight * 0.2) {
+            ilbuniElem.classList.add("zoom");
+          } else {
+            ilbuniElem.classList.remove("zoom");
+          }
+
+          outputElem.innerHTML = ilbuniElem.getBoundingClientRect().top;
+        }
 
         window.addEventListener("scroll", function () {
-          outputElem.innerHTML = window.pageYOffset;
+          // outputElem.innerHTML = window.pageYOffset;
+          // outputElem.innerHTML = ilbuniElem.offsetTop;
+          // outputElem.innerHTML = ilbuniElem.getBoundingClientRect().top;
+          // outputElem.innerHTML = window.innerHeight;
+          showValue();
         });
+
+        showValue();
       })();
     </script>
   </body>

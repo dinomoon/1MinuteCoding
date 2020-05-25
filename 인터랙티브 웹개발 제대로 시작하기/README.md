@@ -384,3 +384,13 @@ const card2 = new Card(7, "blue");
 **1.스크롤 이벤트 다루기**
 
 - `window.pageYOffset`
+  - 현재 스크롤 위치를 알려준다. (세로)
+
+**2. 스크롤 위치에 따라 오브젝트 조작하기**
+
+- `offsetTop`
+  - 객체의 Top위치를 알려준다. (스크롤 위치가 변해도 같음)
+- `getBoundingClientRect`
+  - 스크롤 위치를 기준으로 객체의 위치를 알려준다.
+- `'innerHeight`
+  - 브라우저의 높이를 알려준다.
