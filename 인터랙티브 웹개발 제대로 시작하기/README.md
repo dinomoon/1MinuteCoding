@@ -267,21 +267,45 @@ console.log(c);
 
 **1. 객체1**
 
-```javacript
+- 객체를 만드는 방법
+
+```javascript
 //방법 1
 const person = {};
 person.name = '일분이';
 person.age = 10;
 person.introduce = function() {
-  console.log("안녕하세요");
+  console.log("안녕하세요 저는 일분이 이고 나이는 10살이에요");
 }
 
-//방법2
+//방법2 (주로 쓰이는 방법)
 const person = {
   person.name = '일분이';
   person.age = 10;
   person.introduce = function() {
-    console.log("안녕하세요");
+    console.log("안녕하세요 저는 일분이 이고 나이는 10살이에요");
+  }
+}
+```
+
+**2. 객체2**
+
+- 함수 수정
+
+```javascript
+const person = {
+  person.name = '일분이';
+  person.age = 10;
+  person.introduce = function() {
+    console.log("안녕하세요 저는 " + this.name + " 이고 나이는 " + this.name + "살이에요");
+  }
+}
+
+const person2 = {
+  person.name = '이분이';
+  person.age = 8;
+   person.introduce = function() {
+    console.log("안녕하세요 저는 " + this.name + " 이고 나이는 " + this.name + "살이에요");
   }
 }
 ```
