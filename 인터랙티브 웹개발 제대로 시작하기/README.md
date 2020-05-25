@@ -260,3 +260,28 @@ console.log(c);
 - 문을 여는 것과 닫는 것을 각각 함수로 정의함.
 - 만약 홈페이지 로딩 완료되었을 때, 2번째 문을 열고 싶으면 active함수만 사용하면 되니까 편함. 그리고, requestAnimationFrame을 사용하면 animation이 적용되어 열린다.
   > 먼저 기본 상태가 로드된 후, requestAnimationFrame을 통해 한 템포 늦게 activate가 실행되며 문 열리는 디자인이 적용된다고 생각하시면 됩니다.
+
+---
+
+### 7. 객체(Object)
+
+**1. 객체1**
+
+```javacript
+//방법 1
+const person = {};
+person.name = '일분이';
+person.age = 10;
+person.introduce = function() {
+  console.log("안녕하세요");
+}
+
+//방법2
+const person = {
+  person.name = '일분이';
+  person.age = 10;
+  person.introduce = function() {
+    console.log("안녕하세요");
+  }
+}
+```
