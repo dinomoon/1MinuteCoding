@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+      }
+      .door {
+        position: relative;
+        width: 100px;
+        height: 150px;
+        outline: 2px dashed yellow;
+      }
+      .door-back {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+      }
+      .ilbuni {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100px;
+        height: 100px;
+        outline: 2px dashed red;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      .door:nth-child(1) .ilbuni {
+        background-image: url("../images/ilbuni_0.png");
+      }
+      .door:nth-child(2) .ilbuni {
+        background-image: url("../images/ilbuni_1.png");
+      }
+      .door:nth-child(3) .ilbuni {
+        background-image: url("../images/ilbuni_2.png");
+      }
+      .door-body {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .door:nth-child(1) .door-body {
+        background-color: rgba(255, 0, 0, 0.7);
+      }
+      .door:nth-child(2) .door-body {
+        background-color: rgba(0, 255, 0, 0.7);
+      }
+      .door:nth-child(3) .door-body {
+        background-color: rgba(0, 0, 255, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="door">
+        <div class="door-back"></div>
+        <div class="ilbuni"></div>
+        <div class="door-body"></div>
+      </div>
+      <div class="door">
+        <div class="door-back"></div>
+        <div class="ilbuni"></div>
+        <div class="door-body"></div>
+      </div>
+      <div class="door">
+        <div class="door-back"></div>
+        <div class="ilbuni"></div>
+        <div class="door-body"></div>
+      </div>
+    </div>
+  </body>
+</html>
