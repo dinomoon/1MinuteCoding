@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      img {
+        max-width: 100%;
+      }
+      .content {
+        height: 1000vh;
+        padding: 20%;
+        background-color: yellowgreen;
+      }
+      .output {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 1%;
+        font-size: 2rem;
+        font-weight: 200;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.4);
+      }
+      .ilbuni {
+        width: 100px;
+        margin: 20px auto;
+        transition: 1s;
+      }
+      .ilbuni.zoom {
+        transform: scale(2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="output">output</div>
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+        consectetur voluptatem in, quae architecto id repellat distinctio, rerum
+        tempora expedita aut tenetur suscipit voluptas, hic harum nulla dolorum
+        maxime facere?
+      </p>
+      <figure class="ilbuni">
+        <img src="../images/ilbuni_0.png" alt="일분이" />
+      </figure>
+    </div>
+    <script>
+      (function () {
+        const outputElem = document.querySelector(".output");
+
+        window.addEventListener("scroll", function () {
+          outputElem.innerHTML = window.pageYOffset;
+        });
+      })();
+    </script>
+  </body>
+</html>

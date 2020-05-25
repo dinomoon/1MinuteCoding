@@ -376,3 +376,11 @@ Card.prototype = {
 const card1 = new Card(1, "green");
 const card2 = new Card(7, "blue");
 ```
+
+---
+
+### 8. 스크롤 다루기
+
+**1.스크롤 이벤트 다루기**
+
+- `window.pageYOffset`
