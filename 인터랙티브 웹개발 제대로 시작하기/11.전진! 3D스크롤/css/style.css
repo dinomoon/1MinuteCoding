@@ -25,7 +25,7 @@ body {
 .house {
   width: 100vw;
   height: 100vh;
-  transform: translateZ(-400vw);
+  transform: translateZ(-460vw);
   transform-style: preserve-3d;
 }
 
