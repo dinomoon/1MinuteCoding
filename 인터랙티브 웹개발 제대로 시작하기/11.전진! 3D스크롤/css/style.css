@@ -24,6 +24,7 @@ body {
 .house {
   width: 100vw;
   height: 100vh;
+  transform: translateZ(-400vw);
   transform-style: preserve-3d;
 }
 
@@ -44,4 +45,14 @@ body {
 
 .wall-title {
   font-size: 5rem;
+}
+
+.wall-left {
+  width: 1000vw;
+  transform: rotateY(90deg) translateZ(-500vw);
+}
+
+.wall-right {
+  width: 1000vw;
+  transform: rotateY(90deg) translateZ(-400vw);
 }
