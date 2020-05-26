@@ -452,3 +452,11 @@ btn.addEventListener("click", () => {
   cancelAnimationFrame(timeId);
 });
 ```
+
+---
+
+### 11. 전진! 3D스크롤
+
+**전진! 3D스크롤 3**
+
+- stage? 화면을 클릭했을 때 생기는 캐릭터는 house밖에 생김! house와 캐릭터들을 감싸줄 stage를 만듦
