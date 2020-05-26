@@ -71,3 +71,19 @@ body {
 .wall-front-d {
   transform: translateZ(-500vw);
 }
+
+/* progress-bar */
+.progress-bar-con {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 5px;
+  background: #555;
+  z-index: 1;
+}
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #00a8ff;
+}
