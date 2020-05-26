@@ -464,3 +464,7 @@ btn.addEventListener("click", () => {
 **전진! 3D스크롤 8**
 
 - `pageYOffset`, `offsetHeight`, `innerHeight` 외우자~!
+
+**전진! 3D스크롤 9**
+
+- `resize` 이벤트 배움
