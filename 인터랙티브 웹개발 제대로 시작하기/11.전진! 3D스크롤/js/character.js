@@ -38,7 +38,7 @@ function Character(info) {
   this.lastScrollPos = 0;
 
   this.xPos = info.xPos;
-  this.spped = 0.5;
+  this.spped = info.speed;
   this.direction;
   this.runningState = false;
   this.rafId;
