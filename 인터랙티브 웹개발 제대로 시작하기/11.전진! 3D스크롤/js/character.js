@@ -33,14 +33,26 @@ function Character(info) {
   this.mainElem.style.left = `${info.xPos}%`;
 
   this.init();
+
+  this.scrollState = false;
 }
 
 Character.prototype = {
   constructor: Character,
   init: function () {
     const self = this;
+
     window.addEventListener("scroll", () => {
-      self.mainElem.classList.add("running");
+      clearTimeout(self.scrollState);
+
+      if (!self.scrollState) {
+        self.mainElem.classList.add("running");
+      }
+
+      self.scrollState = setTimeout(() => {
+        self.scrollState = false;
+        self.mainElem.classList.remove("running");
+      }, 300);
     });
   },
 };
