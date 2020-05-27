@@ -527,3 +527,7 @@ btn.addEventListener("click", () => {
 
 - 한 번만 방향키를 눌러도 계속 requestAnimationFrame이 실행되는 것 고치기
 - keyup했는데도 계속 움직이는 것 고치기
+
+**전진! 3D스크롤 25**
+
+- 벽 뚫고 지나가는거 고치기
