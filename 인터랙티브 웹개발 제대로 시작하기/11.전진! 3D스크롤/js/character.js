@@ -39,6 +39,7 @@ function Character(info) {
 
   this.xPos = info.xPos;
   this.spped = 1;
+  this.direction;
 }
 
 Character.prototype = {
@@ -60,10 +61,10 @@ Character.prototype = {
 
       if (pageYOffset > self.lastScrollPos) {
         // 스크롤 내렸을 때
-        this.mainElem.setAttribute("data-direction", "forward");
+        self.mainElem.setAttribute("data-direction", "forward");
       } else {
         // 스크롤 올렸을 때
-        this.mainElem.setAttribute("data-direction", "backward");
+        self.mainElem.setAttribute("data-direction", "backward");
       }
 
       self.lastScrollPos = pageYOffset;
@@ -72,19 +73,35 @@ Character.prototype = {
     window.addEventListener("keydown", (e) => {
       if (e.keyCode == 37) {
         // 왼쪽
-        this.mainElem.setAttribute("data-direction", "left");
+        self.direction = "left";
+        self.mainElem.setAttribute("data-direction", self.direction);
         self.mainElem.classList.add("running");
-        self.xPos -= self.spped;
-        self.mainElem.style.left = `${self.xPos}%`;
+        self.run(self);
       } else if (e.keyCode == 39) {
         // 오른쪽
-        this.mainElem.setAttribute("data-direction", "right");
+        self.direction = "right";
+        self.mainElem.setAttribute("data-direction", self.direction);
         self.mainElem.classList.add("running");
+        self.run(self);
       }
     });
 
     window.addEventListener("keyup", () => {
       self.mainElem.classList.remove("running");
+    });
+  },
+
+  run: function (self) {
+    if (self.direction == "left") {
+      self.xPos -= self.spped;
+    } else if (self.direction == "right") {
+      self.xPos += self.spped;
+    }
+
+    self.mainElem.style.left = `${self.xPos}%`;
+
+    requestAnimationFrame(function () {
+      self.run(self);
     });
   },
 };
