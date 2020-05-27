@@ -29,4 +29,6 @@
   });
 
   resizeHandler();
+
+  new Character();
 })();
