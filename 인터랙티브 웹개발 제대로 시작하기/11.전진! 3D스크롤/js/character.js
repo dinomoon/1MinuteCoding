@@ -35,6 +35,7 @@ function Character(info) {
   this.init();
 
   this.scrollState = false;
+  this.lastScrollPos = 0;
 }
 
 Character.prototype = {
@@ -53,6 +54,16 @@ Character.prototype = {
         self.scrollState = false;
         self.mainElem.classList.remove("running");
       }, 300);
+
+      if (pageYOffset > self.lastScrollPos) {
+        // 스크롤 내렸을 때
+        this.mainElem.setAttribute("data-direction", "forward");
+      } else {
+        // 스크롤 올렸을 때
+        this.mainElem.setAttribute("data-direction", "backward");
+      }
+
+      self.lastScrollPos = pageYOffset;
     });
   },
 };
