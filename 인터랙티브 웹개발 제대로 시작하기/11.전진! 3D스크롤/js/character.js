@@ -36,6 +36,9 @@ function Character(info) {
 
   this.scrollState = false;
   this.lastScrollPos = 0;
+
+  this.xPos = info.xPos;
+  this.spped = 1;
 }
 
 Character.prototype = {
@@ -64,6 +67,24 @@ Character.prototype = {
       }
 
       self.lastScrollPos = pageYOffset;
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.keyCode == 37) {
+        // 왼쪽
+        this.mainElem.setAttribute("data-direction", "left");
+        self.mainElem.classList.add("running");
+        self.xPos -= self.spped;
+        self.mainElem.style.left = `${self.xPos}%`;
+      } else if (e.keyCode == 39) {
+        // 오른쪽
+        this.mainElem.setAttribute("data-direction", "right");
+        self.mainElem.classList.add("running");
+      }
+    });
+
+    window.addEventListener("keyup", () => {
+      self.mainElem.classList.remove("running");
     });
   },
 };
