@@ -4,6 +4,7 @@
   let maxScrollValue;
   const mousePos = { x: 0, y: 0 };
   const stageElem = document.querySelector(".stage");
+  const charBtn = document.querySelector(".select-character");
 
   const resizeHandler = () => {
     maxScrollValue = document.body.offsetHeight - window.innerHeight;
@@ -33,6 +34,15 @@
       xPos: (e.clientX / window.innerWidth) * 100,
       speed: Math.random() * 0.5 + 0.2,
     });
+  });
+
+  charBtn.addEventListener("click", (e) => {
+    const dataChar = e.target.getAttribute("data-char");
+    if (dataChar == "ilbuni") {
+      document.querySelector("body").setAttribute("data-char", dataChar);
+    } else if (dataChar == "ragirl") {
+      document.querySelector("body").setAttribute("data-char", dataChar);
+    }
   });
 
   resizeHandler();
