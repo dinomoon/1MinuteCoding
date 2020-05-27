@@ -522,3 +522,8 @@ btn.addEventListener("click", () => {
 
 - requestAnimationFrame으로 부드럽게 움직이게 해주기
 - 부드럽게 움직이는 것처럼 보이려면 초당 24프레임정도 되야한다고 한다. 그런데 keydown은 초당 10프레임정도..
+
+**전진! 3D스크롤 24**
+
+- 한 번만 방향키를 눌러도 계속 requestAnimationFrame이 실행되는 것 고치기
+- keyup했는데도 계속 움직이는 것 고치기

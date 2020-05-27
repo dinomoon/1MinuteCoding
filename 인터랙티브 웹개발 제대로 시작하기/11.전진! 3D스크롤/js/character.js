@@ -38,8 +38,10 @@ function Character(info) {
   this.lastScrollPos = 0;
 
   this.xPos = info.xPos;
-  this.spped = 1;
+  this.spped = 0.5;
   this.direction;
+  this.runningState = false;
+  this.rafId;
 }
 
 Character.prototype = {
@@ -71,23 +73,30 @@ Character.prototype = {
     });
 
     window.addEventListener("keydown", (e) => {
+      if (self.runningState) {
+        return;
+      }
       if (e.keyCode == 37) {
         // 왼쪽
         self.direction = "left";
         self.mainElem.setAttribute("data-direction", self.direction);
         self.mainElem.classList.add("running");
         self.run(self);
+        self.runningState = true;
       } else if (e.keyCode == 39) {
         // 오른쪽
         self.direction = "right";
         self.mainElem.setAttribute("data-direction", self.direction);
         self.mainElem.classList.add("running");
         self.run(self);
+        self.runningState = true;
       }
     });
 
     window.addEventListener("keyup", () => {
       self.mainElem.classList.remove("running");
+      self.runningState = false;
+      cancelAnimationFrame(self.rafId);
     });
   },
 
@@ -100,7 +109,7 @@ Character.prototype = {
 
     self.mainElem.style.left = `${self.xPos}%`;
 
-    requestAnimationFrame(function () {
+    self.rafId = requestAnimationFrame(function () {
       self.run(self);
     });
   },
