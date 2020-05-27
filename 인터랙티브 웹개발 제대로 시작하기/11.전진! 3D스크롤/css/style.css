@@ -5,6 +5,29 @@ body {
   height: 500vh;
 }
 
+/* 애니메이션 */
+@keyframes ani-head {
+  to {
+    transform: rotateX(-10deg);
+  }
+}
+@keyframes ani-running-leg {
+  from {
+    transform: rotateX(-30deg);
+  }
+  to {
+    transform: rotateX(30deg);
+  }
+}
+@keyframes ani-running-arm {
+  from {
+    transform: rotateY(30deg);
+  }
+  to {
+    transform: rotateY(-30deg);
+  }
+}
+
 .world {
   position: fixed;
   left: 0;
@@ -129,12 +152,7 @@ body {
 .character-face.face-back {
   transform: rotateY(180deg);
 }
-/* 애니메이션 */
-@keyframes ani-head {
-  to {
-    transform: rotateX(-10deg);
-  }
-}
+
 /* 머리 */
 .character-head {
   left: calc(42 / 856 * 100%);
@@ -220,4 +238,13 @@ body {
 }
 .character-leg-left .face-back {
   background-image: url("../../images/ilbuni_leg_0.png");
+}
+.character.running .character-leg {
+  animation: ani-running-leg 0.2s alternate infinite linear;
+}
+.character.running .character-leg-left {
+  animation: ani-running-leg 0.2s alternate-reverse infinite linear;
+}
+.character.running .character-arm {
+  animation: ani-running-arm 0.2s alternate infinite linear;
 }

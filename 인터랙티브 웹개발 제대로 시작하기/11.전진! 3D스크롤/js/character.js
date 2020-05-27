@@ -1,6 +1,6 @@
 function Character(info) {
   this.mainElem = document.createElement("div");
-  this.mainElem.classList.add("character");
+  this.mainElem.classList.add("character", "running");
   this.mainElem.innerHTML = `
     <div class="character-face-con character-head">
       <div class="character-face character-head-face face-front"></div>
