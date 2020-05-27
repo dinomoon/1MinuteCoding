@@ -129,6 +129,12 @@ body {
 .character-face.face-back {
   transform: rotateY(180deg);
 }
+/* 애니메이션 */
+@keyframes ani-head {
+  to {
+    transform: rotateX(-10deg);
+  }
+}
 /* 머리 */
 .character-head {
   left: calc(42 / 856 * 100%);
@@ -203,7 +209,7 @@ body {
   background-image: url("../../images/ilbuni_leg_1.png");
 }
 .character-leg-left {
-  left: calc(414 / 856 * 100%);
+  left: calc(410 / 856 * 100%);
   top: calc(1031 / 1334 * 100%);
   width: calc(230 / 856 * 100%);
   height: calc(300 / 1334 * 100%);
